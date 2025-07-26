@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FUCKED UP!</h1>
+    <h1 id="name"></h1>
+    <h1 id="c"></h1>
+    <div id="pdfViewer" style="margin-top: 20px;"></div>
+    <script>
+        // Parse query string
+        const params = new URLSearchParams(window.location.search);
+        const message = params.get('message');
+        const id = params.get('id');
+        const v=message+id+'.pdf';
+        const url = `http://127.0.0.1:5000/files/${message}/${v}`;
+        console.log(url);
+        // console.log(v);
+        document.getElementById('pdfViewer').innerHTML =
+            `<iframe src="${url}" width="600" height="800"></iframe>`;
+        document.getElementById('name').textContent = message;
+        document.getElementById('c').textContent = id;
+    </script>
+</body>
+</html>

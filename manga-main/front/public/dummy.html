@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Viewer</title>
+</head>
+<body>
+    <h1>PDF Viewer</h1>
+    <button onclick="showPDF('op', 'op1.pdf')">View OP1</button>
+    <button onclick="showPDF('op', 'op2.pdf')">View OP2</button>
+
+    <div id="pdfViewer" style="margin-top: 20px;"></div>
+
+    <script>
+        function showPDF(anime, filename) {
+            const url = `http://127.0.0.1:5000/files/${anime}/${filename}`;
+            document.getElementById('pdfViewer').innerHTML =
+                `<iframe src="${url}" width="600" height="800"></iframe>`;
+        }
+    </script>
+</body>
+</html>

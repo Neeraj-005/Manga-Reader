@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .chp{
+            border-radius: 20px;
+            background-color: rgb(196, 121, 121);
+            width: 500px;
+            height: 500;
+            display: flex;
+            gap: 10px;
+            padding-top:25px;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h" style="opacity: 1;"></h1>
+    <h1>Chapters</h1>
+    <h3 style="opacity: 0;">FUCKED Up!!</h3>
+    <div class="chp">
+        
+    </div>
+    <script>
+    const no = new URLSearchParams(window.location.search);
+    const message = no.get('message');
+    document.getElementById('h').textContent = message || '0';
+
+    const parent = document.querySelector('.chp');
+    for (let i = 1; i <= 10; i++) {
+    const childDiv = document.createElement('div');
+    childDiv.className = 'child';
+    childDiv.style.cursor=`pointer`;
+    childDiv.style.border=`solid 2px red`;
+    childDiv.textContent = `Chapter: ${i}`;
+    childDiv.onclick = function () {
+    const ch = `Chapter ${i}`;
+    window.location.href = '/chapter.html?message=' + encodeURIComponent(message) + '&id=' + encodeURIComponent(i);
+    };
+
+    parent.appendChild(childDiv);
+    }
+    </script>
+</body>
+</html>
