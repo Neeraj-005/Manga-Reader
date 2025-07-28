@@ -6,5 +6,7 @@
         public string Name { get; set; }
         public string Filepath { get; set; }
 
+        public string CoverImage { get; set; }
+
     }
 }

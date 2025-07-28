@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gall{
+            width: 500px;
+            height: 260px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            background-color: rgb(185, 130, 130);
+        }
+        .read{
+        width: 100px;
+        height: 80px;
+        border-radius: 30%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background-color: rgb(185, 130, 130);
+        }
+        .main{
+            display: flex;
+            gap: 200px;
+            width: 100%;
+            height: 300px;
+            justify-content: center;
+            align-items: center;
+            border: solid red 2px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- <h3 style="opacity: 0;">FUCKED Up!!</h3>
+    <div class="main">
+    <div class="gall"><h1 id="h" style="opacity: 1;"></h1><h1> image</h1></div>
+    <div class="read" onclick="window.location.href = '/chapV.html?message=' + encodeURIComponent(message)">Read now</div>
+    </div>
+    
+    <script>
+    const no = new URLSearchParams(window.location.search);
+    const message = no.get('message');
+    document.getElementById('h').textContent = message || '0';
+    </script> -->
+    <div id="root"></div>
+    <script type="module" src="/src/chapterselect.jsx"></script>
+</body>
+</html>

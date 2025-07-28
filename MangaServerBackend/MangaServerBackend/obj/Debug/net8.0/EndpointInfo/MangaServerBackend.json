@@ -17,6 +17,18 @@
         }
       }
     },
+    "/api/Manga/series": {
+      "get": {
+        "tags": [
+          "Manga"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Manga/search": {
       "get": {
         "tags": [
@@ -26,6 +38,50 @@
           {
             "name": "searchTerm",
             "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manga/series/{seriesName}/chapters": {
+      "get": {
+        "tags": [
+          "Manga"
+        ],
+        "parameters": [
+          {
+            "name": "seriesName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manga/files/{id}": {
+      "get": {
+        "tags": [
+          "Manga"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string"
             }
